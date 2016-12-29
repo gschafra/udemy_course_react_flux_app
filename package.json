@@ -1,29 +1,46 @@
 {
-  "name": "udemy_course_react_flux_app",
-  "version": "0.0.1",
-  "description": "An app based on an udemy course featuring React and Flux",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gschafra/udemy_course_react_flux_app.git"
-  },
-  "author": "Guenter Schafranek",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gschafra/udemy_course_react_flux_app/issues"
-  },
-  "homepage": "https://github.com/gschafra/udemy_course_react_flux_app#readme",
-  "devDependencies": {
-    "babel-preset-react": "^6.16.0",
-    "babelify": "^7.3.0",
-    "browserify": "^13.1.1",
-    "watchify": "^3.8.0"
-  },
-  "dependencies": {
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
-  }
+    "name": "udemy_course_react_flux_app",
+    "version": "0.0.1",
+    "description": "An app based on an udemy course featuring React and Flux",
+    "main": "index.js",
+    "scripts": {
+        "watch": "webpack -w",
+        "build": "webpack --bail -p",
+        "serve": "node ./node_modules/.bin/webpack-dev-server --inline --progress --colors --hot --content-base public",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gschafra/udemy_course_react_flux_app.git"
+    },
+    "author": "Guenter Schafranek",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/gschafra/udemy_course_react_flux_app/issues"
+    },
+    "homepage": "https://github.com/gschafra/udemy_course_react_flux_app#readme",
+    "devDependencies": {
+        "babel-core": "^6.21.0",
+        "babel-loader": "^6.2.10",
+        "babel-plugin-transform-runtime": "^6.15.0",
+        "babel-preset-es2015": "^6.18.0",
+        "babel-preset-react": "^6.16.0",
+        "babelify": "^7.3.0",
+        "browserify": "^13.1.1",
+        "css-loader": "^0.26.1",
+        "file-loader": "^0.9.0",
+        "json-loader": "^0.5.4",
+        "jsx-loader": "^0.13.2",
+        "react-hot-loader": "^1.3.1",
+        "style-loader": "^0.13.1",
+        "url-loader": "^0.5.7",
+        "watchify": "^3.8.0",
+        "webpack": "^1.14.0",
+        "webpack-dev-server": "^1.16.2"
+    },
+    "dependencies": {
+        "babel-runtime": "^6.20.0",
+        "react": "^15.4.1",
+        "react-dom": "^15.4.1"
+    }
 }
