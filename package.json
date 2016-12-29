@@ -1,0 +1,29 @@
+{
+  "name": "udemy_course_react_flux_app",
+  "version": "0.0.1",
+  "description": "An app based on an udemy course featuring React and Flux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gschafra/udemy_course_react_flux_app.git"
+  },
+  "author": "Guenter Schafranek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gschafra/udemy_course_react_flux_app/issues"
+  },
+  "homepage": "https://github.com/gschafra/udemy_course_react_flux_app#readme",
+  "devDependencies": {
+    "babel-preset-react": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "watchify": "^3.8.0"
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  }
+}
