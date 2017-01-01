@@ -1,21 +1,25 @@
 var React = require('react');
 var ListItem = require('./ListItem.jsx');
-
-var ingredients = [
-    {"id":1,"text":"ham"},
-    {"id":2,"text":"cheese"},
-    {"id":3,"text":"pork"},
-    {"id":4,"text":"unkown"}
-];
+var ListGroup = require('react-bootstrap/lib/ListGroup');
 
 var List = React.createClass({
     render: function() {
-        var listItems = ingredients.map(function(item){
-            return <ListItem key={item.id} ingredient={item.text} />;
-        });
+        var createItem = function(text, index) {
+            return <ListItem key={index + text} text={text} />;
+        };
         return (
-            <ul>{listItems}</ul>
+            <ListGroup>{this.props.items.map(createItem)}</ListGroup>
         );
+    },
+    getDefaultProps: function() {
+        return {
+            items: [
+                "ham",
+                "cheese",
+                "pork",
+                "unkown"
+            ]
+        };
     }
 });
 
