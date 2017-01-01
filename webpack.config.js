@@ -48,7 +48,7 @@ module.exports = {
         }),
         new ExtractTextPlugin("app.css"),*/
         new webpack.optimize.UglifyJsPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
+        //new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ],
     devtool: 'source-map'
