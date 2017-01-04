@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     resolve: {
@@ -17,36 +18,40 @@ module.exports = {
         publicPath: 'dist/'
     },
     module: {
-        loaders: [{
-            test: /\.css$/,
-            loader: 'style!css'
-        }, {
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            load: 'babel',
-            loaders: [
-                'react-hot',
-                'jsx?harmony'
-            ]/*,
-            query: {
-                presets: ['react'],
-                plugins: ['transform-runtime']
-            }*/
-        }, {
-            test: /\.(png|jpg)$/,
-            loader: 'url?limit=25000'
-        }, {
-            test: /\.json$/,
-            loader: 'json-loader'
-        }]
+        loaders: [
+            //Extract CSS files
+            {
+                test: /\.css$/,
+                //loader: 'style-loader!css-loader'
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+            }, {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                load: 'babel',
+                loaders: [
+                    'react-hot',
+                    'jsx?harmony'
+                ]/*,
+                query: {
+                    presets: ['react'],
+                    plugins: ['transform-runtime']
+                }*/
+            }, {
+                test: /\.(png|jpg)$/,
+                loader: 'url?limit=25000'
+            }, {
+                test: /\.json$/,
+                loader: 'json-loader'
+            }
+        ]
     },
     plugins: [
         /*new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify('production')
             }
-        }),
-        new ExtractTextPlugin("app.css"),*/
+        }),*/
+        new ExtractTextPlugin("main.css"),
         new webpack.optimize.UglifyJsPlugin(),
         //new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
